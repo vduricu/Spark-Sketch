@@ -29,11 +29,13 @@
 
 .toolbox .new{background: transparent url('icons/new.png') no-repeat center center;}
 .toolbox .save{background: transparent url('icons/save.png') no-repeat center center;}
+.toolbox .cancel{background: transparent url('icons/cancel.png') no-repeat center center;}
 .toolbox .clear{background: transparent url('icons/clear.png') no-repeat center center;}
 .toolbox .brush{background: transparent url('icons/brush.png') no-repeat center center;}
 
 .userbox .delete{background: transparent url('icons/delete.png') no-repeat center center;}
 .userbox .download{background: transparent url('icons/download.png') no-repeat center center;}
+.userbox .extend{background: transparent url('icons/extend.png') no-repeat center center;}
 
 .bsubmit{
 	width: 104px;

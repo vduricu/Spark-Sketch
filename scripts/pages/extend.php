@@ -13,10 +13,6 @@ $r = mysql_fetch_assoc($q);
 <head>
 	<title><?=$language['extendPage_title']?> / Spark Sketch</title>
 	<? require_once("tpl/header.php");?>
-	<script type="text/javascript">
-var image = new Image();
-image.src = "/files/<?=$filename;?>";
-	</script>
 </head>
 <body>
 	<?require_once("tpl/menu_logged.php"); ?>
@@ -32,6 +28,7 @@ image.src = "/files/<?=$filename;?>";
 							<input type="hidden" id="dType" value="new"/>
 						</div>
 					</li>
+					<li><input title="<?=$language['cancelDraw']?>" type="button" class="no-text button cancel" id="cancel" value="cancel"/><input type="hidden" id="extendFN" value="<?=$r['filename']?>"/></li>
 				</ul>
 			</div>
 			<div class="right tools">

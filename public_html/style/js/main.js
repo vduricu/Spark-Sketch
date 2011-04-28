@@ -203,6 +203,15 @@ $(document).ready(function(){
 			return false;
 		});
 	});
+
+	$("#extend").click(function(){
+		var filename = $("#extendFN").val();
+		window.location.href = '/extend/'+filename;
+	});
+	$("#cancel").click(function(){
+		var filename = $("#extendFN").val();
+		window.location.href = '/gallery/'+filename;
+	});
 });
 
 

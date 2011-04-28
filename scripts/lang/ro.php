@@ -14,6 +14,7 @@ $language = array(
 	"galleryPage_title"	=> "Gallery",
 	"accountPage_title"	=> "Contul meu",
 	"myGallery_title"	=> "Galeria mea",
+	"extendPage_title"	=> "Dezvolta un desen",
 	"adminGallery_title"=> "Toate desenele",
 
 	//Menu Items
@@ -69,6 +70,8 @@ $language = array(
 	"newDraw"			=> "Creaza un nou desen",
 	"saveDraw"			=> "Salveaza desenul",
 	"deleteDraw"		=> "Sterge-ti desenul",
+	"extendDraw"		=> "Dezvolta desenul",
+	"cancelDraw"		=> "Anuleaza desenul",
 	"confirmDelete_title"=> "Confirmare stergere <em>%s</em>!",
 	"confirmDelete_text"=> "Esti sigur ca vrei sa stergi desenul <em>%s</em>?",
 

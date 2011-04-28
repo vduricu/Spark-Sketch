@@ -88,6 +88,7 @@ class UCore{
 		else
 			switch($this->url[0]){
 				case 'home':	return 'sketch';break;
+				case 'extend':	return 'sketch2';break;
 				case 'gallery':	return 'page';break;
 				case 'account':	return 'page';break;
 				case 'mygallery':return 'page';break;

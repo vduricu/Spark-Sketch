@@ -14,7 +14,7 @@
 	<script src="/style/js/jq.js" type="text/javascript"></script>
 	<script src="/style/js/ui.js" type="text/javascript"></script>
 <?
-	if($core->pageType()=='sketch')
+	if($core->pageType()=='sketch'||$core->pageType()=='sketch2')
 		require_once("sketch_h1.php");
 ?>
 	<script src="/style/js/tipsy.js" type="text/javascript"></script>
@@ -22,6 +22,8 @@
 <?
 	if($core->pageType()=='sketch')
 		require_once("sketch_h2.php");
+	if($core->pageType()=='sketch2')
+		require_once("sketch_h3.php");
 ?>
 
 	<link rel="shortcut icon" href="/style/images/favicon.ico" type="image/x-icon" />

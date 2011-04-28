@@ -71,6 +71,7 @@ $language = array(
 	"saveDraw"			=> "Save your drawing",
 	"extendDraw"		=> "Extend this drawing",
 	"deleteDraw"		=> "Delete your drawing",
+	"cancelDraw"		=> "Cancel drawing",
 	"confirmDelete_title"=> "Confirm delete of <em>%s</em>!",
 	"confirmDelete_text"=> "Are you sure you want to delete <em>%s</em>?",
 
