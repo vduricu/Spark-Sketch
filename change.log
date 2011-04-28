@@ -1,0 +1,15 @@
+Spark Sketch - Your online Drawing Pad
+
+#################Version 0.1.2##################
+- Fixed "admin delete" bug - delete.php
+- Added download button to gallery page
+- Moved buttons css style to another file
+- Fixed email sending problem
+
+#################Version 0.1.1##################
+- Created the main program
+- 2 Main sections - registred and unregistred
+- Used drawingpad jquery plugin
+- Ajax Login and Register
+- My Gallery
+- Image Sharing - with AddThis (by ClearSpring)
