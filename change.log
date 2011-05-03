@@ -3,6 +3,9 @@ Spark Sketch - Your online Drawing Pad
 #################Version 0.1.3##################
 - Added extend function
 - Created the README file
+- Updated first page information
+- Implemented quota functions - paintings quota
+- Fixed activation bug
 
 #################Version 0.1.2##################
 - Fixed "admin delete" bug - delete.php

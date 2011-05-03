@@ -2,6 +2,17 @@
 if(!isset($_SESSION['sk_user'])){
 	masterRedirect("/");
 }
+
+$quota = $core->quota($_SESSION['sk_user']);
+if($quota['available']>0){
+	$qval = $quota['used']/$quota['available']*100;
+	$mcolor = $core->quotaColor($qval);
+}else{
+	$quota['available'] = "&infin;";
+	$qval = 0;
+	$mcolor = $core->quotaColor(0);
+}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
@@ -12,6 +23,10 @@ if(!isset($_SESSION['sk_user'])){
 <body>
 	<?require_once("tpl/menu_logged.php"); ?>
 	<div class="sketch">
+		<div class="quota">
+			<div class="qinfo qtext_m<?=$mcolor?>"><?=$quota['used']?>/<?=$quota['available']?> pictures</div>
+			<div class="qbar qcolor_m<?=$mcolor?>" style="width: <?=$qval?>%;">&nbsp;</div>
+		</div>
 		<div class="toolbox">
 			<div class="left main">
 				<ul>

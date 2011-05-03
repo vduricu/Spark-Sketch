@@ -4,6 +4,12 @@ if(isset($_SESSION['sk_user'])){
 	masterRedirect("/");
 }
 
+ob_clean();
+ob_end_clean();
+
+@header("Refresh: 5; url=/");
+
+ob_start();
 $code = end($core->url);
 $q = mysql_query("SELECT * FROM `user` WHERE `activation_code`='{$code}'");
 if(mysql_num_rows($q)){
@@ -18,7 +24,6 @@ echo nl2br(sprintf($language['redirectIn'],5));
 echo nl2br(sprintf($language['redirectNotice'],5,"/"));
 ob_end_flush();
 
-header("Refresh: 5; url=/");
 die();
 
 

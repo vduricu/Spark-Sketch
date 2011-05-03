@@ -14,9 +14,9 @@
 			</div>
 		</div>
 		<div class="box">
-			<div class="title"><img src="/style/images/bstore.png" alt="save"/> <?=$language['storeit_title']?></div>
+			<div class="title"><img src="/style/images/bshare.png" alt="share"/> <?=$language['shareit_title']?></div>
 			<div class="text">
-				<?=$language['storeit_text']?>
+				<?=$language['shareit_text']?>
 			</div>
 		</div>
 		<div class="box">

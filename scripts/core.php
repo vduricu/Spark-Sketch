@@ -23,6 +23,33 @@ class UCore{
 		if(isset($_SESSION['sk_user']))
 			$this->logged = true;
 	}
+	public function quotaColor($quota_val){
+		if($quota_val <= 20)		return 20;
+		elseif($quota_val <= 40)	return 40;
+		elseif($quota_val <= 60)	return 60;
+		elseif($quota_val <= 80)	return 80;
+		else						return 100;
+	}
+	public function quota($id,$type='all'){
+		if(empty($type)) $type = 'all';
+
+		$q = mysql_query("SELECT `quota` FROM `user` WHERE `id`='{$id}'");
+		if(!mysql_num_rows($q))
+			return FALSE;
+
+		$r = mysql_fetch_assoc($q);
+		$quota = array(
+			"available"=>$r['quota'],
+			"used"=>mysql_num_rows(mysql_query("SELECT * FROM `draws` WHERE `userid`='{$id}'")),
+		);
+
+		switch($type){
+			case 'all':			return $quota; break;
+			case 'available':	return $quota['available']; break;
+			case 'used':		return $quota['used']; break;
+			default:			return FALSE;
+		}
+	}
 	public function fieldByID($table,$field,$id){
 		$sql = "SELECT `{$field}` FROM `{$table}` WHERE `id`='{$id}'";
 		$q = mysql_query($sql);

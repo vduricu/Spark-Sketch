@@ -109,15 +109,15 @@ $language = array(
 
 	//Something New Box
 	"somethingnew_title"=> "Try something new",
-	"somethingnew_text"	=> "Try something new.",
+	"somethingnew_text"	=> "Try something new, something different and very simple to use. Draw everything you want and share your \"art\" with your friends using the social buttons. Also, you can download or extend any existing drawing.",
 
 	//Store it Box
-	"storeit_title"		=> "Save your drawings",
-	"storeit_text"		=> "Save your drawings and share them with your friends.",
+	"shareit_title"		=> "Share your drawings",
+	"shareit_text"		=> "Draw everthing you have wanted and share it to Facebook, Twitter, MySpace, Email, Messenger and other social networks.",
 
 	//Equation Box
 	"equation_title"	=> "Draw Ecuations",
-	"equation_text"		=> "Draw ecuations and ask your friends how to solve them.",
+	"equation_text"		=> "Don't know how to resolve an ecuation and need a piece of paper to write it and ask a friend, use Spark Sketch and draw the ecuation and send it to your friends to ask for a solution.",
 );
 
 /*File: en.php*/

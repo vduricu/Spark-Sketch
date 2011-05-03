@@ -1,6 +1,5 @@
 -- Spark Sketch - V 0.1 - Tristan Tzara Build
 
-
 -- phpMyAdmin SQL Dump
 -- version 3.3.9
 -- http://www.phpmyadmin.net
@@ -57,6 +56,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `lastname` varchar(100) NOT NULL,
   `creationDate` datetime NOT NULL,
   `lang` enum('en','ro') NOT NULL DEFAULT 'en',
+  `quota` int(10) NOT NULL DEFAULT '100',
   `activated` enum('yes','no') NOT NULL DEFAULT 'no',
   `activation_code` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`,`user`)
@@ -66,6 +66,6 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Salvarea datelor din tabel `user`
 --
 
-INSERT INTO `user` (`id`, `user`, `password`, `rank`, `email`, `firstname`, `lastname`, `creationDate`, `lang`, `activated`, `activation_code`) VALUES
-(1, 'thg2oo6', '9014d7ba56c2601dcd637a70294cf6b60381ef63', 'admin', 'valentin@duricu.ro', 'Valentin', 'Duricu', '2011-04-25 20:28:37', 'en', 'yes', NULL),
-(2, 'usertest', '3ab32bd3c4eddcce66a8bf6042e65987148017f1', 'user', 'vfr_thg@yahoo.co.uk', 'Test', 'Utilizator', '2011-04-25 22:19:55', 'en', 'yes', NULL);
+INSERT INTO `user` (`id`, `user`, `password`, `rank`, `email`, `firstname`, `lastname`, `creationDate`, `lang`, `quota`, `activated`, `activation_code`) VALUES
+(1, 'admin', '3ab32bd3c4eddcce66a8bf6042e65987148017f1', 'admin', 'admin@sparkblog.net', 'Valentin', 'Duricu', '2011-04-25 20:28:37', 'en', -1, 'yes', NULL),
+(2, 'usertest', '3ab32bd3c4eddcce66a8bf6042e65987148017f1', 'user', 'test@sparkblog.net', 'Test', 'Utilizator', '2011-04-25 22:19:55', 'en', 100, 'yes', NULL);

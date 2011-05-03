@@ -109,15 +109,15 @@ $language = array(
 
 	//Something New Box
 	"somethingnew_title"=> "Incearca ceva nou",
-	"somethingnew_text"	=> "Incearca ceva nou.",
+	"somethingnew_text"	=> "Incearca ceva nou, diferit si foarte simplu de utilizat. Deseneaza tot ce vrei si arata-ti arta prietenilor tai folosindu-te de butoanele sociale. De asemenea, poti descarca sau dezvolta desene deja existente.",
 
 	//Store it Box
-	"storeit_title"		=> "Salveaza-ti desenele",
-	"storeit_text"		=> "Salveaza-ti desenele si impartele prietenilor tai.",
+	"shareit_title"		=> "Distribuie desnele",
+	"shareit_text"		=> "Deseneaza tot ce ti-ai dorit si distibuie desenul pe Facebook, Twitter, MySpace, Email, Messenger sau alte retele sociale.",
 
 	//Equation Box
 	"equation_title"	=> "Deseneaza ecuatii",
-	"equation_text"		=> "Deseneaza ecuatii si cere rezolvari prietenilor tai.",
+	"equation_text"		=> "Nu stii cum se rezolva o ecuatie si ai nevoie de o \"foaie de hartie\" pe care sa scrii ecuatia si sa iti intrebi prietenii? Foloseste Spark Sketch, deseneaza ecuatia si trimite-o prietenilor tai pentru ca acestia sa ti-o rezolve.",
 );
 
 /*File: ro.php*/
