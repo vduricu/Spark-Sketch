@@ -1,5 +1,20 @@
 Spark Sketch
+A simple Drawing Pad!
 
-A drawing pad online suite!
+Spark Sketch is an online paint app with social network sharing enabled. Every
+paint saved by registered users is saved in a folder and attached to that user
+in the database. An already drawn paint can be extend by any user, saved on
+the server and attached to the user who extended it.
 
-More info will come soon
+Requires:
+	* PHP 5.3.x
+	* MySQL 5.x
+	* At least 100 MB space
+
+How it works:
+Unregistered users have access to paints created by other users, shared by
+users, a demo page, where they can test the software, a register page,
+a login page and a password recovery page.
+
+Registred users can draw paintings, store, share or extend them. Also each user
+can modify some personal data or delete his account.
