@@ -110,6 +110,9 @@ td{width: 65%;text-align: left;}
 	width: 300px;
 	background-color: #282828;
 	border: 1px solid #dcdcdc;
+	-webkit-box-shadow: 0px 3px 5px #000000;
+	   -moz-box-shadow: 0px 3px 5px #000000;
+	        box-shadow: 0px 3px 5px #000000;
 }
 .loginbox th{
 	color: #9afa03;
@@ -155,6 +158,9 @@ td{width: 65%;text-align: left;}
 	width: 300px;
 	background-color: #282828;
 	border: 1px solid #dcdcdc;
+	-webkit-box-shadow: 0px 3px 5px #000000;
+	   -moz-box-shadow: 0px 3px 5px #000000;
+	        box-shadow: 0px 3px 5px #000000;
 }
 .registerbox th{
 	color: #9afa03;

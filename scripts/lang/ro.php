@@ -74,6 +74,11 @@ $language = array(
 	"cancelDraw"		=> "Anuleaza desenul",
 	"confirmDelete_title"=> "Confirmare stergere <em>%s</em>!",
 	"confirmDelete_text"=> "Esti sigur ca vrei sa stergi desenul <em>%s</em>?",
+	"quotaNotice"		=> "Pentru a salva o alta poza trebuie sa stergi una existenta sau sa iti achizitionezi un pachet mai mare.",
+
+	//Chrome Extend Notice
+	"chromeNotice_title"=> "Functia de Dezvoltare a desenului nu este suportata.",
+	"chromeNotice_text"	=> "Ne pare rau, dar pentru moment Google Chrome nu poate suporta aceasta functie. Incercam sa gasim o solutie cat mai repede posibil.",
 
 	//Drawing Save
 	"nameEmpty"			=> "Campul nume nu poate fi gol!",

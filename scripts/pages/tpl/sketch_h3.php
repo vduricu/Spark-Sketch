@@ -13,7 +13,7 @@ $(document).ready(function(){
 		lineColor: '#dc0000'
 	});
 	var image = new Image();
-	image.src = "/files/<?=$filename;?>?dl=1";
+	image.src = "/files/<?=$filename;?>";
 
 	var context2D = $('canvas')[0].getContext('2d');
 	context2D.drawImage(image,0,0,720,580);

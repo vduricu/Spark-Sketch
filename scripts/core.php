@@ -35,19 +35,24 @@ class UCore{
 
 		$q = mysql_query("SELECT `quota` FROM `user` WHERE `id`='{$id}'");
 		if(!mysql_num_rows($q))
-			return FALSE;
+			return array("available"=>0,"used"=>0,"value"=>0,"color"=>$this->quotaColor(0));
 
 		$r = mysql_fetch_assoc($q);
+		$used = mysql_num_rows(mysql_query("SELECT * FROM `draws` WHERE `userid`='{$id}'"));
 		$quota = array(
-			"available"=>$r['quota'],
+			"available"=>$r['quota']<0?"&infin;":$r['quota'],
 			"used"=>mysql_num_rows(mysql_query("SELECT * FROM `draws` WHERE `userid`='{$id}'")),
+			"value"=>$r['quota']<0?0:$used/$r['quota']*100,
+			"color"=>$r['quota']<0?$this->quotaColor(0):$this->quotaColor($used/$r['quota']*100),
 		);
 
 		switch($type){
 			case 'all':			return $quota; break;
 			case 'available':	return $quota['available']; break;
 			case 'used':		return $quota['used']; break;
-			default:			return FALSE;
+			case 'value':		return $quota['value']; break;
+			case 'color':		return $quota['color']; break;
+			default:			return array("available"=>0,"used"=>0,"value"=>0,"color"=>$this->quotaColor(0));
 		}
 	}
 	public function fieldByID($table,$field,$id){

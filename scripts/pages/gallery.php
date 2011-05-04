@@ -48,8 +48,11 @@ $r = mysql_fetch_assoc($q);
 					if($r['userid']==$_SESSION['sk_user']||$core->fieldByID('user','rank',$_SESSION['sk_user'])=='admin'){
 				?>
 					<li><input title="<?=$language['deleteDraw']?>" type="button" class="no-text button delete" id="delete" value="delete" onClick="confirmDelete('<?=sprintf($language['confirmDelete_title'],$r['title'])?>','<?=sprintf($language['confirmDelete_text'],$r['title'])?>','<?=$r['filename']?>');"/></li>
-				<?}?>
+				<?}
+				$quota = $core->quota($_SESSION['sk_user']);
+				if($quota['value']<100){?>
 					<li><input title="<?=$language['extendDraw']?>" type="button" class="no-text button extend" id="extend" value="extend"/><input type="hidden" id="extendFN" value="<?=$r['filename']?>"/></li>
+					<?}?>
 				<?}?>
 					<li><a href="/files/<?=$r['filename']?>?dl=1" title="<?=$language['saveFile']?>" type="button" class="no-text button download"></a></li>
 				</ul>

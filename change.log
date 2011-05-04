@@ -1,5 +1,13 @@
 Spark Sketch - Your online Drawing Pad
 
+#################Version 0.1.4##################
+- Fixed canvas extend image loading
+- Updated quota function
+- Made quota to work
+- Changed jQuery UI Theme - Aristo
+- Added Chrome Notice at extend page
+- Added Browser Class
+
 #################Version 0.1.3##################
 - Added extend function
 - Created the README file

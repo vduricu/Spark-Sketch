@@ -74,6 +74,11 @@ $language = array(
 	"cancelDraw"		=> "Cancel drawing",
 	"confirmDelete_title"=> "Confirm delete of <em>%s</em>!",
 	"confirmDelete_text"=> "Are you sure you want to delete <em>%s</em>?",
+	"quotaNotice"		=> "To save another image please delete an existing painting or upgrade your account to a higher package.",
+
+	//Chrome Extend Notice
+	"chromeNotice_title"=> "Chrome Extend function is not supported.",
+	"chromeNotice_text"	=> "We're sorry, but for the moment Chrome/WebKit does not support this function. We are trying to fix this as soon as posible.",
 
 	//Drawing Save
 	"nameEmpty"			=> "The name field cannot be empty!",

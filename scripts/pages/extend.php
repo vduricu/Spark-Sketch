@@ -9,14 +9,7 @@ if(!mysql_num_rows($q))
 $r = mysql_fetch_assoc($q);
 
 $quota = $core->quota($_SESSION['sk_user']);
-if($quota['available']>0){
-	$qval = $quota['used']/$quota['available']*100;
-	$mcolor = $core->quotaColor($qval);
-}else{
-	$quota['available'] = "&infin;";
-	$qval = 0;
-	$mcolor = $core->quotaColor(0);
-}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
@@ -25,16 +18,48 @@ if($quota['available']>0){
 	<? require_once("tpl/header.php");?>
 </head>
 <body>
+<?
+require_once("../scripts/browser.php");
+$browser = new Browser();
+if( $browser->getBrowser() == Browser::BROWSER_CHROME ) {?>
+<style type="text/css">
+.ui-dialog-titlebar-close {
+    display: none;
+}
+.menu{
+	position: absolute !important;
+	z-index: 2001 !important;
+	right: 5%;
+}
+</style>
+<div class="chrome" title="<?=$language['chromeNotice_title']?>">
+	<?=$language['chromeNotice_text']?>
+</div>
+<script type="text/javascript">
+$(".chrome").dialog({
+	width: 500,
+	height: 200,
+	modal: true,
+	disabled: true,
+	closeOnEscape: false,
+	resizable: false,
+});
+</script>
+<?}?>
 	<?require_once("tpl/menu_logged.php"); ?>
 	<div class="sketch">
 		<div class="quota">
-			<div class="qinfo qtext_m<?=$mcolor?>"><?=$quota['used']?>/<?=$quota['available']?> pictures</div>
-			<div class="qbar qcolor_m<?=$mcolor?>" style="width: <?=$qval?>%;">&nbsp;</div>
+			<?if($quota['value']==100){?>
+			<div class="qnotice"><?=$language['quotaNotice']?></div>
+			<?}?>
+			<div class="qinfo qtext_m<?=$quota['color']?>"><?=$quota['used']?>/<?=$quota['available']?> pictures</div>
+			<div class="qbar qcolor_m<?=$quota['color']?>" style="width: <?=$quota['value']?>%;">&nbsp;</div>
 		</div>
 		<div class="toolbox">
 			<div class="left main">
 				<ul>
 					<li><input title="<?=$language['newDraw']?>" type="button" class="no-text button new" id="new" value="new"/></li>
+					<?if($quota['value']<100){?>
 					<li>
 						<input title="<?=$language['saveDraw']?>" type="button" class="no-text button save" id="save" value="save"/>
 						<div class="saveBox">
@@ -42,6 +67,7 @@ if($quota['available']>0){
 							<input type="hidden" id="dType" value="new"/>
 						</div>
 					</li>
+					<?}?>
 					<li><input title="<?=$language['cancelDraw']?>" type="button" class="no-text button cancel" id="cancel" value="cancel"/><input type="hidden" id="extendFN" value="<?=$r['filename']?>"/></li>
 				</ul>
 			</div>
