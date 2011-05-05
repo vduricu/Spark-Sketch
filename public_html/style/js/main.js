@@ -104,7 +104,6 @@ $(document).ready(function(){
 			return false;
 		});
 	});
-
 	$("#infoChange").click(function(){
 		var data = {
 		   firstname: $("#firstname").val(),

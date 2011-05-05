@@ -17,6 +17,7 @@
 	if($core->pageType()=='sketch'||$core->pageType()=='sketch2')
 		require_once("sketch_h1.php");
 ?>
+
 	<script src="/style/js/tipsy.js" type="text/javascript"></script>
 	<script src="/style/js/main.js" type="text/javascript"></script>
 <?
@@ -24,9 +25,16 @@
 		require_once("sketch_h2.php");
 	if($core->pageType()=='sketch2')
 		require_once("sketch_h3.php");
+	if($core->pageType()=='admin')
+		require_once("admin_header.php");
 ?>
 
 	<link rel="shortcut icon" href="/style/images/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="/style/style.css" />
 	<link rel="stylesheet" type="text/css" href="/style/ui/ui.css" />
 	<link rel="stylesheet" type="text/css" href="/style/tipsy.css" />
+
+<?if(isset($_SESSION['sk_user']))
+	if($core->fieldByID("user","rank",$_SESSION['sk_user'])=="admin"){?>
+	<link rel="stylesheet" type="text/css" href="/style/admin.css" />
+<?}?>

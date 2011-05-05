@@ -4,6 +4,7 @@
 			<ul>
 				<li><a href="/"><?=$language['menuHome']?></a></li>
 				<li><a href="/demo"><?=$language['menuDemo']?></a></li>
+				<li><a href="/fgallery"><?=$language['menuFGallery']?></a></li>
 				<li><a id="registerb"><?=$language['menuRegister']?></a></li>
 				<li class="last"><a id="loginb"><?=$language['menuLogin']?></a></li>
 			</ul>

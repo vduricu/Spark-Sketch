@@ -3,6 +3,17 @@
 $language = array(
 	"en"				=> "English",
 	"ro"				=> "Romainian",
+	"yes"				=> "Yes",
+	"no"				=> "No",
+	"user"				=> "User",
+	"admin"				=> "Admin",
+	"photos"			=> "photos",
+	"confirm"			=> "Are you sure?",
+	"quota"				=> "Quota",
+	"rank"				=> "Rank",
+	"delete"			=> "Delete",
+	"activate"			=> "Activate",
+	"deactivate"		=> "Deactivate",
 	"footerNotice"		=> "All rights reserved.",
 	"version"			=> "Version",
 	"redirectIn"		=> "\nYou will be redirected in %d seconds.",
@@ -13,21 +24,26 @@ $language = array(
 	"demoPage_title"	=> "Test our product",
 	"galleryPage_title"	=> "Gallery",
 	"accountPage_title"	=> "Account",
+	"fullGallery_title"	=> "See all images",
 	"myGallery_title"	=> "My Art Gallery",
 	"extendPage_title"	=> "Extend a drawing",
 	"adminGallery_title"=> "All Drawings",
+	"adminUsers_title"	=> "Registered Users",
 
 	//Menu Items
 	"menuHome"			=> "home",
 	"menuDemo"			=> "demo",
+	"menuFGallery"		=> "gallery",
 	"menuRegister"		=> "register",
 	"menuLogin"			=> "login",
 
 	"menuDraw"			=> "draw",
 	"menuGallery"		=> "my art gallery",
-	"menuAdminGallery"	=> "all drawings",
 	"menuAccount"		=> "account",
 	"menuLogout"		=> "logout",
+	"menuAdminGallery"	=> "all drawings",
+	"menuAdminUsers"	=> "registered users",
+	"menuAdminTools"	=> "settings",
 
 	//Login Box
 	"loginUsername"		=> "username:",
@@ -111,6 +127,15 @@ $language = array(
 	"idEmpty"			=> "You cannot leave the id field empty, please reload the page!",
 	"changeGood"		=> "Success!",
 	"accNotChecked"		=> "Accept notice isn't checked!",
+
+	//Admin User
+	"auUsername"		=> "Username",
+	"auRank"			=> "Rank",
+	"auEmail"			=> "Email",
+	"auFirstName"		=> "First Name",
+	"auLastName"		=> "Last Name",
+	"auQuota"			=> "Quota",
+	"auActivated"		=> "Activated",
 
 	//Something New Box
 	"somethingnew_title"=> "Try something new",

@@ -3,6 +3,17 @@
 $language = array(
 	"en"				=> "Engleza",
 	"ro"				=> "Romana",
+	"yes"				=> "Da",
+	"no"				=> "Nu",
+	"user"				=> "Utilizator",
+	"admin"				=> "Admin",
+	"photos"			=> "Poze",
+	"confirm"			=> "Esti sigur?",
+	"quota"				=> "Ratie",
+	"rank"				=> "Rang",
+	"delete"			=> "Sterge",
+	"activate"			=> "Activeaza",
+	"deactivate"		=> "Dezactiveaza",
 	"footerNotice"		=> "Toate drepturile rezervate.",
 	"version"			=> "Versiune",
 	"redirectIn"		=> "\nVei fi redirectat in %d secunde.",
@@ -13,21 +24,26 @@ $language = array(
 	"demoPage_title"	=> "Incearca",
 	"galleryPage_title"	=> "Gallery",
 	"accountPage_title"	=> "Contul meu",
+	"fullGallery_title"	=> "Vezi toate desenele",
 	"myGallery_title"	=> "Galeria mea",
 	"extendPage_title"	=> "Dezvolta un desen",
 	"adminGallery_title"=> "Toate desenele",
+	"adminUsers_title"	=> "Utilizatori Inregistrati",
 
 	//Menu Items
 	"menuHome"			=> "acasa",
 	"menuDemo"			=> "demo",
+	"menuFGallery"		=> "galerie",
 	"menuRegister"		=> "inregistrare",
 	"menuLogin"			=> "autentificare",
 
 	"menuDraw"			=> "deseneaza",
 	"menuGallery"		=> "galeria mea",
-	"menuAdminGallery"	=> "toate desenele",
 	"menuAccount"		=> "contul meu",
 	"menuLogout"		=> "iesire",
+	"menuAdminGallery"	=> "toate desenele",
+	"menuAdminUsers"	=> "utilizatori inregistrati",
+	"menuAdminTools"	=> "setari",
 
 	//Login Box
 	"loginUsername"		=> "utilizator:",
@@ -111,6 +127,15 @@ $language = array(
 	"idEmpty"			=> "Nu poti lasa campul id liber, te rugam reincarca pagina!",
 	"changeGood"		=> "Success!",
 	"accNotChecked"		=> "Nu esti de acord sa iti stergi contul!",
+
+	//Admin User
+	"auUsername"		=> "Utilizator",
+	"auRank"			=> "Rang",
+	"auEmail"			=> "Email",
+	"auFirstName"		=> "Prenume",
+	"auLastName"		=> "Nume",
+	"auQuota"			=> "Quota",
+	"auActivated"		=> "Activat",
 
 	//Something New Box
 	"somethingnew_title"=> "Incearca ceva nou",

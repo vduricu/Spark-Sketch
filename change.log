@@ -1,6 +1,13 @@
 Spark Sketch - Your online Drawing Pad
 
-#################Version 0.1.4##################
+#################|Version 0.1.5|##################
+- Reverted to the original jQuery UI theme
+- Added global website configuration (see config section)
+- Added Global Gallery - available to all visitators
+- Fixed a few bugs
+- Enhanced admin functions
+
+#################|Version 0.1.4|##################
 - Fixed canvas extend image loading
 - Updated quota function
 - Made quota to work
@@ -8,20 +15,20 @@ Spark Sketch - Your online Drawing Pad
 - Added Chrome Notice at extend page
 - Added Browser Class
 
-#################Version 0.1.3##################
+#################|Version 0.1.3|##################
 - Added extend function
 - Created the README file
 - Updated first page information
 - Implemented quota functions - paintings quota
 - Fixed activation bug
 
-#################Version 0.1.2##################
+#################|Version 0.1.2|##################
 - Fixed "admin delete" bug - delete.php
 - Added download button to gallery page
 - Moved buttons css style to another file
 - Fixed email sending problem
 
-#################Version 0.1.1##################
+#################|Version 0.1.1|##################
 - Created the main program
 - 2 Main sections - registred and unregistred
 - Used drawingpad jquery plugin

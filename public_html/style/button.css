@@ -9,7 +9,7 @@
 	height: 34px;
 	background: transparent url('images/login.png') no-repeat center center;
 	cursor: pointer;
-	border: none;
+	border: none !important;
 }
 .blogin:hover{background-image: url('images/loginh.png');}
 .blogin:active{background-image: url('images/logina.png');}
@@ -22,7 +22,7 @@
 	height: 34px;
 	background: transparent url('images/register.png') no-repeat center center;
 	cursor: pointer;
-	border: none;
+	border: none !important;
 }
 .bregister:hover{background-image: url('images/registerh.png');}
 .bregister:active{background-image: url('images/registera.png');}
@@ -45,7 +45,7 @@
 	height: 34px;
 	background: transparent url('images/submit.png') no-repeat center center;
 	cursor: pointer;
-	border: none;
+	border: none !important;
 	float: right;
 }
 .bsubmit:hover{background-image: url('images/submith.png');}
