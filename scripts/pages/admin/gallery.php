@@ -24,7 +24,7 @@ if(!isset($_SESSION['sk_user'])){
 					if($i%4==0)
 						echo "<tr>\n";
 
-					echo "<td><a href=\"/gallery/{$r['filename']}\"><img src=\"/files/{$r['filename']}\" title=\"{$r['title']} - by ".$core->fieldByID("user","user",$r['userid'])."\" alt=\"image\"/></a></td>\n";
+					echo "<td onClick=\"showGAdmin('#photos','{$r['filename']}','{$r['title']}','{$language['confirm']}')\"><img src=\"/files/{$r['filename']}\" title=\"{$r['title']} - by ".$core->fieldByID("user","user",$r['userid'])."\" alt=\"image\"/></td>\n";
 
 					if($i%4==3||$i==$n-1)
 						echo "</tr>\n";
@@ -36,5 +36,16 @@ if(!isset($_SESSION['sk_user'])){
 		</table>
 	</div>
 	<? require_once("tpl/footer.php"); ?>
+<div id="boxes">
+	<div id="photos" class="window">
+		<h3></h3>
+		<ul>
+			<li id="view"><img src="/style/admin/view.png" alt="view"/><br /><?=$language['view']?></li>
+			<li id="delete"><img src="/style/admin/delete.png" alt="delete"/><br /><?=$language['delete']?></li>
+		</ul>
+	</div>
+	<div id="mask"></div>
+</div>
+<div id="modalMsg"></div>
 </body>
 </html>

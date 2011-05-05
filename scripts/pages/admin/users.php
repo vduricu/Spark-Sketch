@@ -58,7 +58,7 @@ if(!isset($_SESSION['sk_user'])){
 	<? require_once("tpl/footer.php"); ?>
 <div id="boxes">
 	<div id="users" class="window">
-		<h3>User: <span id="user">thg2oo6</span></h3>
+		<h3>User: <span id="user">&nbsp;</span></h3>
 		<ul>
 			<li id="rank"><img src="/style/admin/rank.png" alt="rank"/><br /><?=$language['rank']?></li>
 			<li id="quota"><img src="/style/admin/quota.png" alt="quota"/><br /><?=$language['quota']?></li>

@@ -136,3 +136,37 @@ function showUAdmin(id,user,rank,quota,activated,sure){
 		});
 	});
 }
+
+function showGAdmin(id,file,title,sure){
+	$(id+" h3").text();
+	$(id+" h3").html(title);
+
+	launchWindow(id);
+	$("#delete").click(function(){
+
+		$("#modalMsg").attr("title","Confirmation");
+		$("#modalMsg").text("");
+		$("#modalMsg").html(sure);
+
+		$("#modalMsg").dialog({
+			resizable: false,
+			width:320,
+			height:160,
+			modal: true,
+			draggable: false,
+			buttons: {
+				Ok: function() {
+					var toSend = {filename: file};
+					$.post("/delete",toSend);
+					window.location.href='/admingallery';
+				},
+				Cancel: function() {
+					$(this).dialog("close");
+				}
+			}
+		});
+	});
+	$("#view").click(function(){
+		window.location.href='/gallery/'+file;
+	});
+}

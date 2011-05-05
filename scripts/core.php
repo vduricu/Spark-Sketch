@@ -135,6 +135,16 @@ class UCore{
 						masterRedirect("/404");
 					return 'admin/userquota';
 					break;
+				case 'settings':
+					if($this->fieldByID('user','rank',$_SESSION['sk_user'])!='admin')
+						masterRedirect("/404");
+					return 'admin/settings';
+					break;
+				case 'gsettings':
+					if($this->fieldByID('user','rank',$_SESSION['sk_user'])!='admin')
+						masterRedirect("/404");
+					return 'admin/gsettings';
+					break;
 				default:
 					masterRedirect("/404");
 			}
@@ -164,7 +174,8 @@ class UCore{
 				case 'fgallery':	return 'page';break;
 				case 'account':		return 'page';break;
 				case 'mygallery':	return 'page';break;
-				case 'admingallery':return 'page';break;
+				case 'admingallery':return 'admin';break;
+				case 'settings':	return 'admin';break;
 				case 'users':		return 'admin';break;
 				case '404':			return 'page';break;
 				default:

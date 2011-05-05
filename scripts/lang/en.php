@@ -14,6 +14,7 @@ $language = array(
 	"delete"			=> "Delete",
 	"activate"			=> "Activate",
 	"deactivate"		=> "Deactivate",
+	"view"				=> "View",
 	"footerNotice"		=> "All rights reserved.",
 	"version"			=> "Version",
 	"redirectIn"		=> "\nYou will be redirected in %d seconds.",
@@ -29,6 +30,7 @@ $language = array(
 	"extendPage_title"	=> "Extend a drawing",
 	"adminGallery_title"=> "All Drawings",
 	"adminUsers_title"	=> "Registered Users",
+	"adminSettings_title"=> "Settings",
 
 	//Menu Items
 	"menuHome"			=> "home",
@@ -127,6 +129,10 @@ $language = array(
 	"idEmpty"			=> "You cannot leave the id field empty, please reload the page!",
 	"changeGood"		=> "Success!",
 	"accNotChecked"		=> "Accept notice isn't checked!",
+
+	//Admin Settings
+	"aSettingsHeader"	=> "General Settings",
+	"asTimezone"		=> "Timezone",
 
 	//Admin User
 	"auUsername"		=> "Username",

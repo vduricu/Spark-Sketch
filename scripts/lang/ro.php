@@ -14,6 +14,7 @@ $language = array(
 	"delete"			=> "Sterge",
 	"activate"			=> "Activeaza",
 	"deactivate"		=> "Dezactiveaza",
+	"view"				=> "Vizualizeaza",
 	"footerNotice"		=> "Toate drepturile rezervate.",
 	"version"			=> "Versiune",
 	"redirectIn"		=> "\nVei fi redirectat in %d secunde.",
@@ -29,6 +30,7 @@ $language = array(
 	"extendPage_title"	=> "Dezvolta un desen",
 	"adminGallery_title"=> "Toate desenele",
 	"adminUsers_title"	=> "Utilizatori Inregistrati",
+	"adminSettings_title"=> "Setari",
 
 	//Menu Items
 	"menuHome"			=> "acasa",
@@ -127,6 +129,10 @@ $language = array(
 	"idEmpty"			=> "Nu poti lasa campul id liber, te rugam reincarca pagina!",
 	"changeGood"		=> "Success!",
 	"accNotChecked"		=> "Nu esti de acord sa iti stergi contul!",
+
+	//Admin Settings
+	"aSettingsHeader"	=> "Setari Generale",
+	"asTimezone"		=> "Fus Orar",
 
 	//Admin User
 	"auUsername"		=> "Utilizator",
