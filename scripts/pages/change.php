@@ -94,13 +94,11 @@ switch($clean['type']){
 
 		if($clean['id']!=1){
 			$q = mysql_query("SELECT * FROM `draws` WHERE `userid`='{$clean['id']}'");
-			if(!mysql_num_rows($q))
-				masterDie("{$language['imageNotExists']}");
-
-			while($r = mysql_fetch_assoc($q)){
-				unlink("../files/{$r['filename']}.png");
-				mysql_query("DELETE FROM `draws` WHERE `filename`='{$r['filename']}' LIMIT 1");
-			}
+			if(mysql_num_rows($q))
+				while($r = mysql_fetch_assoc($q)){
+					unlink("../files/{$r['filename']}.png");
+					mysql_query("DELETE FROM `draws` WHERE `filename`='{$r['filename']}' LIMIT 1");
+				}
 			mysql_query("DELETE FROM `user` WHERE `id`='{$clean['id']}' LIMIT 1;");
 		}
 		if(mysql_error())

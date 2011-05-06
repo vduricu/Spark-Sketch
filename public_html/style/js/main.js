@@ -52,6 +52,7 @@ $(document).ready(function(){
 	$('.userbox .button').tipsy({gravity: 'e',fade: true});
 	$('.drawShare a').tipsy({gravity: 's',fade: true});
 	$('.imageGallery img').tipsy({gravity: $.fn.tipsy.autoNS,fade: true});
+	$('.adminMenu img').tipsy({gravity: 'w',fade: true});
 
 	var brushBox = 0;
 	$("#brush").click(function(){
@@ -65,7 +66,8 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$(".blogin").click(function(){
+	$(".blogin").click(function(e){
+		e.preventDefault();
 		var data = {
 			username: $("#l-username").val(),
 			password: $("#l-password").val(),
@@ -81,9 +83,12 @@ $(document).ready(function(){
 			}
 			return false;
 		});
+		return false;
 	});
 
-	$(".bregister").click(function(){
+	$(".bregister").click(function(e){
+
+		e.preventDefault();
 		var data = {
 			username: $("#r-username").val(),
 			password: $("#r-password").val(),
@@ -94,15 +99,21 @@ $(document).ready(function(){
 				ajax: true
 		};
 		$.post("/register",data,function(data){
-			if(data!="good"){
+			var msgStart = data.split("|",2);
+			if(msgStart[0]!="good"){
 				$("#registerError").fadeOut(100).text();
-				$("#registerError").html(data).fadeIn(300);
+				$("#registerError").html(msgStart[1]).fadeIn(300);
 			}else{
 				$("#registerError").fadeOut(100).text();
-				$("#registerForm").submit();
+				$("#registerGood").fadeOut(100).text();
+				$("#registerGood").html(msgStart[1]).fadeIn(300);
+				setTimeout(function(){
+					$("#registerForm").submit();
+				},1700);
 			}
 			return false;
 		});
+		return false;
 	});
 	$("#infoChange").click(function(){
 		var data = {

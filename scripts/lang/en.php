@@ -72,6 +72,7 @@ $language = array(
 	"passwordToShort"	=> "The password is to short! It must have at least 6 characters!",
 	"usernameToShort"	=> "The username is to short! It must have at least 5 characters!",
 	"resUsername"		=> "The username is restricted! Choose another!",
+	"registered"		=> "You have been registered! Please activate your account!",
 
 	//Activation Code
 	"activationTitle"	=> "Your activation code for spark sketch!",

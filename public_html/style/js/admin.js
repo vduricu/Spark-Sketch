@@ -1,6 +1,4 @@
 $(document).ready(function(){
-	$('.adminMenu img').tipsy({gravity: 'w',fade: true});
-
     /*$('tbody tr').click(function(e) {
     	e.preventDefault();
         launchWindow("#users");
@@ -106,7 +104,7 @@ function showUAdmin(id,user,rank,quota,activated,sure){
 	$("#quota").click(function(){
 		$("#modalMsg").attr("title","Quota");
 		$("#modalMsg").text("");
-		$("#modalMsg").html("Quota: <select id=\"quotas\"><option value=\"-1\" "+(quota=='-1'?'selected':'')+">&infin;</option><option value=\"100\" "+(quota=='100'?'selected':'')+">100</option><option value=\"1000\" "+(quota=='1000'?'selected':'')+">1000</option><option value=\"10000\" "+(rank=='10000'?'selected':'')+">10000</option></select>");
+		$("#modalMsg").html("Quota: <select id=\"quotas\"><option value=\"-1\" "+(quota=='-1'?'selected':'')+">&infin;</option><option value=\"10\" "+(quota=='10'?'selected':'')+">10</option><option value=\"100\" "+(quota=='100'?'selected':'')+">100</option><option value=\"1000\" "+(quota=='1000'?'selected':'')+">1000</option><option value=\"10000\" "+(rank=='10000'?'selected':'')+">10000</option></select>");
 
 		$("#modalMsg").dialog({
 			resizable: false,

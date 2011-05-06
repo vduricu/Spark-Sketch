@@ -99,6 +99,17 @@ td{width: 65%;text-align: left;}
 	font-size: 9pt;
 	font-family: monospace;
 }
+.menu .good{
+	display: none;
+	width: 285px;
+	padding: 5px;
+	margin: 0 auto;
+	border: 1px solid #00dc00;
+	background: #f9f9f9;
+	color: #00dc00;
+	font-size: 9pt;
+	font-family: monospace;
+}
 .loginbox{
 	cursor: default;
 	display: none;

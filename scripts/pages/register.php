@@ -25,53 +25,45 @@ $clean['firstname'] = filter_input(INPUT_POST,"firstname",FILTER_SANITIZE_STRING
 $clean['lastname'] = filter_input(INPUT_POST,"lastname",FILTER_SANITIZE_STRING);
 
 if(empty($clean['username'])||empty($clean['password'])||empty($clean['confirm'])||empty($clean['email'])||empty($clean['firstname'])||empty($clean['lastname']))
-	masterDie($language['emptyFields']);
+	masterDie("error|{$language['emptyFields']}");
 
 if(strlen($clean['password'])<5)
-	masterDie($language['usernameToShort']);
+	masterDie("error|{$language['usernameToShort']}");
 
 foreach($resUName as $uname)
 	if($uname == $clean['username'])
-		masterDie($language['resUsername']);
+		masterDie("error|{$language['resUsername']}");
 
 if($clean['password']!=$clean['confirm'])
-	masterDie($language['passwordNotMatch']);
+	masterDie("error|{$language['passwordNotMatch']}");
 
 if(strlen($clean['password'])<6)
-	masterDie($language['passwordToShort']);
+	masterDie("error|{$language['passwordToShort']}");
 
 $clean['password'] = $core->createPassword($clean['password']);
 
 if(!$clean['email'])
-	masterDie($language['emailNotValid']);
+	masterDie("error|{$language['emailNotValid']}");
 
 if(isset($_POST['ajax'])){
 	$q = mysql_query("SELECT * FROM `user` WHERE `user`='{$clean['username']}'");
 	if(mysql_num_rows($q))
-		masterDie($language['userExists']);
+		masterDie("error|{$language['userExists']}");
 
 	$q = mysql_query("SELECT * FROM `user` WHERE `email`='{$clean['email']}'");
 	if(mysql_num_rows($q))
-		masterDie($language['emailExists']);
-
-	echo "good";
-
-}else{
-	$q = mysql_query("SELECT * FROM `user` WHERE `user`='{$clean['username']}'");
-	if(mysql_num_rows($q))
-		masterDie($language['userExists']);
-
-	$q = mysql_query("SELECT * FROM `user` WHERE `email`='{$clean['email']}'");
-	if(mysql_num_rows($q))
-		masterDie($language['emailExists']);
+		masterDie("error|{$language['emailExists']}");
 
 	$clean['date'] = date("Y-m-d H:i:s");
 
 	$code = sha1("{$clean['confirm']}|{$clean['date']}|{$clean['email']}|".uniqid());
 	mysql_query("INSERT INTO `user` (`id`,`user`,`password`,`rank`,`email`,`firstname`,`lastname`,`creationDate`,`activated`,`activation_code`) VALUES (NULL,'{$clean['username']}','{$clean['password']}','user','{$clean['email']}','{$clean['firstname']}','{$clean['lastname']}','{$clean['date']}','no','{$code}');");
 
-	mail($clean['email'],$language['activationTitle'],sprintf($language['activationCode'],$code),"FROM: Sketch Daemon<daemon@sparksketch.ro>");
+	@mail($clean['email'],$language['activationTitle'],sprintf($language['activationCode'],$code),"FROM: Sketch Daemon<daemon@sparksketch.ro>");
 
+	echo "good|{$language['registered']}";
+
+}else{
 	masterRedirect("/");
 }
 

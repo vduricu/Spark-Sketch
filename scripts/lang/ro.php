@@ -72,6 +72,7 @@ $language = array(
 	"passwordToShort"	=> "Parola este prea scurta! Aceasta trebuie sa aibe minim 6 caractere!",
 	"usernameToShort"	=> "Numele de utilizator este prea scurt!  Aceasta trebuie sa aibe minim 5 caractere!",
 	"resUsername"		=> "Utilizatorul este restrictionat! Alege altul!",
+	"registered"		=> "Contul tau a fost inregistrat! Te rugam sa iti activezi contul!",
 
 	//Activation Code
 	"activationTitle"	=> "Codul tau de activare pentru spark sketch!",

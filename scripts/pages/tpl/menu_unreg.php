@@ -23,7 +23,7 @@
 				</table>
 				<div>
 					<div class="left"><?//<a href="#">Forgot your password?</a>?></div>
-					<div class="right"><input type="button" value="Login" class="blogin no-text"/></div>
+					<div class="right"><input type="submit" value="Login" class="blogin no-text"/></div>
 					<div class="clear"></div>
 				</div>
 				</form>
@@ -31,6 +31,7 @@
 			<div class="registerbox">
 				<form action="/register" id="registerForm" method="POST">
 				<div class="error" id="registerError"></div>
+				<div class="good" id="registerGood"></div>
 				<table>
 					<tr>
 						<th><?=$language['registerUsername']?></th>
@@ -61,7 +62,7 @@
 					</tr>
 				</table>
 				<div>
-					<div class="right"><input type="button" value="Register" class="bregister no-text"/></div>
+					<div class="right"><input type="submit" value="Register" class="bregister no-text"/></div>
 					<div class="clear"></div>
 				</div>
 				</form>

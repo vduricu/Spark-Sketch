@@ -81,7 +81,7 @@ date_default_timezone_set($core->getConfig('timezone'));
 
 //We load the language file
 $lang = "lang/{$core->language()}.php";
-if(file_exists($lang))
+if(file_exists("../scripts/".$lang))
 	require_once($lang);
 else
 	require_once("lang/en.php");

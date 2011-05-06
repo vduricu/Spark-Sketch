@@ -26,7 +26,7 @@ if($clean['activated']=='yes')
 else
 	$act = 'yes';
 
-mysql_query("UPDATE `user` SET `activated`='{$act}' WHERE `user`='{$clean['user']}' LIMIT 1");
+mysql_query("UPDATE `user` SET `activated`='{$act}',`activation_code`=NULL WHERE `user`='{$clean['user']}' LIMIT 1");
 masterDie("good");
 
 /*File: save.php*/

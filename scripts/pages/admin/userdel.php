@@ -20,6 +20,14 @@ $q = mysql_query($sql);
 if(!mysql_num_rows($q))
 	masterDie($language['userNotExists']);
 
+$clean['id'] = $core->IDByField("user","user",$clean['user']);
+$q = mysql_query("SELECT * FROM `draws` WHERE `userid`='{$clean['id']}'");
+if(mysql_num_rows($q))
+	while($r = mysql_fetch_assoc($q)){
+		unlink("../files/{$r['filename']}.png");
+		mysql_query("DELETE FROM `draws` WHERE `filename`='{$r['filename']}' LIMIT 1");
+	}
+
 mysql_query("DELETE FROM `user` WHERE `user`='{$clean['user']}' LIMIT 1");
 masterDie("good");
 
