@@ -57,7 +57,7 @@ if(isset($_POST['ajax'])){
 	$clean['date'] = date("Y-m-d H:i:s");
 
 	$code = sha1("{$clean['confirm']}|{$clean['date']}|{$clean['email']}|".uniqid());
-	mysql_query("INSERT INTO `user` (`id`,`user`,`password`,`rank`,`email`,`firstname`,`lastname`,`creationDate`,`activated`,`activation_code`) VALUES (NULL,'{$clean['username']}','{$clean['password']}','user','{$clean['email']}','{$clean['firstname']}','{$clean['lastname']}','{$clean['date']}','no','{$code}');");
+	mysql_query("INSERT INTO `user` (`id`,`user`,`password`,`rank`,`email`,`firstname`,`lastname`,`lang`,`creationDate`,`activated`,`activation_code`) VALUES (NULL,'{$clean['username']}','{$clean['password']}','user','{$clean['email']}','{$clean['firstname']}','{$clean['lastname']}','{$core->language()}','{$clean['date']}','no','{$code}');");
 
 	@mail($clean['email'],$language['activationTitle'],sprintf($language['activationCode'],$code),"FROM: Sketch Daemon<daemon@sparksketch.ro>");
 

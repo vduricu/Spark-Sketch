@@ -7,3 +7,5 @@ if(isset($_SESSION['sk_user']))
 	if($core->fieldByID("user","rank",$_SESSION['sk_user'])=="admin")
 		require_once("menu_admin.php");
 ?>
+</body>
+</html>

@@ -1,3 +1,6 @@
+<?php
+header ('Content-Type: text/javascript');
+?>
 $(document).ready(function(){
     /*$('tbody tr').click(function(e) {
     	e.preventDefault();
@@ -60,11 +63,11 @@ function showUAdmin(id,user,rank,quota,activated,sure){
 			draggable: false,
 			buttons: {
 				Ok: function() {
-					$.post("/userdel",{user: user},function(data){
+					$.post("<?=$core->createURL("/userdel")?>",{user: user},function(data){
 						if(data!="good")
 							alert(data);
 						else
-							window.location.href="/users";
+							window.location.href="<?=$core->createURL("/users")?>";
 					});
 				},
 				Cancel: function() {
@@ -87,11 +90,11 @@ function showUAdmin(id,user,rank,quota,activated,sure){
 			draggable: false,
 			buttons: {
 				Ok: function() {
-					$.post("/userrank",{user: user,rank: $("#ranks").val()},function(data){
+					$.post("<?=$core->createURL("/userrank")?>",{user: user,rank: $("#ranks").val()},function(data){
 						if(data!="good")
 							alert(data);
 						else
-							window.location.href="/users";
+							window.location.href="<?=$core->createURL("/users")?>";
 					});
 				},
 				Cancel: function() {
@@ -114,11 +117,11 @@ function showUAdmin(id,user,rank,quota,activated,sure){
 			draggable: false,
 			buttons: {
 				Ok: function() {
-					$.post("/userquota",{user: user,quota: $("#quotas").val()},function(data){
+					$.post("<?=$core->createURL("/userquota")?>",{user: user,quota: $("#quotas").val()},function(data){
 						if(data!="good")
 							alert(data);
 						else
-							window.location.href="/users";
+							window.location.href="<?=$core->createURL("/users")?>";
 					});
 				},
 				Cancel: function() {
@@ -129,8 +132,8 @@ function showUAdmin(id,user,rank,quota,activated,sure){
 	});
 
 	$("#deactivate,#activate").click(function(){
-		$.post("/useract",{user: user,activate:activated},function(data){
-			window.location.href="/users";
+		$.post("<?=$core->createURL("/useract")?>",{user: user,activate:activated},function(data){
+			window.location.href="<?=$core->createURL("/users")?>";
 		});
 	});
 }
@@ -155,8 +158,8 @@ function showGAdmin(id,file,title,sure){
 			buttons: {
 				Ok: function() {
 					var toSend = {filename: file};
-					$.post("/delete",toSend);
-					window.location.href='/admingallery';
+					$.post("<?=$core->createURL("/delete")?>",toSend);
+					window.location.href="<?=$core->createURL("/admingallery")?>";
 				},
 				Cancel: function() {
 					$(this).dialog("close");
@@ -165,6 +168,6 @@ function showGAdmin(id,file,title,sure){
 		});
 	});
 	$("#view").click(function(){
-		window.location.href='/gallery/'+file;
+		window.location.href="<?=$core->createURL("/gallery/")?>"+file;
 	});
 }

@@ -1,1 +1,1 @@
-<script src="/style/js/admin.js" type="text/javascript"></script>
+<script src="<?=$core->createURL("/js-admin")?>" type="text/javascript"></script>

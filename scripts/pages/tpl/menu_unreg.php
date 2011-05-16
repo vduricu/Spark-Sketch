@@ -2,14 +2,14 @@
 		<div class="left logo no-text">spark sketch</div>
 		<div class="right menu">
 			<ul>
-				<li><a href="/"><?=$language['menuHome']?></a></li>
-				<li><a href="/demo"><?=$language['menuDemo']?></a></li>
-				<li><a href="/fgallery"><?=$language['menuFGallery']?></a></li>
+				<li><a href="<?=$core->createURL("/")?>"><?=$language['menuHome']?></a></li>
+				<li><a href="<?=$core->createURL("/demo")?>"><?=$language['menuDemo']?></a></li>
+				<li><a href="<?=$core->createURL("/fgallery")?>"><?=$language['menuFGallery']?></a></li>
 				<li><a id="registerb"><?=$language['menuRegister']?></a></li>
 				<li class="last"><a id="loginb"><?=$language['menuLogin']?></a></li>
 			</ul>
 			<div class="loginbox">
-				<form action="/login" id="loginForm" method="POST">
+				<form action="<?=$core->createURL("/login")?>" id="loginForm" method="POST">
 				<div class="error" id="loginError"></div>
 				<table>
 					<tr>
@@ -29,7 +29,7 @@
 				</form>
 			</div>
 			<div class="registerbox">
-				<form action="/register" id="registerForm" method="POST">
+				<form action="<?=$core->createURL("/register")?>" id="registerForm" method="POST">
 				<div class="error" id="registerError"></div>
 				<div class="good" id="registerGood"></div>
 				<table>

@@ -19,7 +19,7 @@
 ?>
 
 	<script src="/style/js/tipsy.js" type="text/javascript"></script>
-	<script src="/style/js/main.js" type="text/javascript"></script>
+	<script src="<?=$core->createURL("/js-main")?>" type="text/javascript"></script>
 <?
 	if($core->pageType()=='sketch')
 		require_once("sketch_h2.php");

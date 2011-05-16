@@ -45,22 +45,47 @@ class UCore{
 	private $config = array();
 
 	/**
+	 * Stores the pages text.
+	 *
+	 * @var array $language
+	 * @access private
+	 */
+	private $lang = array();
+
+	/**
+	 * Uses the API functions.
+	 *
+	 * @var UKApi $api
+	 * @access private
+	 */
+	private $api;
+
+	/**
 	 * Constructs the Spark Sketch Base
 	 */
-	function __construct(){
-		if($_SERVER['REQUEST_URI']=='/') $this->url[0] = 'home';
-		else $this->url = explode("/",substr($_SERVER['REQUEST_URI'],1));
+	function __construct(UKApi &$api,array &$language){
+		$this->lang = &$language;
+		if(SK_REWRITE == 1) $URL = $_SERVER['REQUEST_URI'];
+		else $URL = $_SERVER['REQUEST_URI']=='/'?'/':$_SERVER['PATH_INFO'];
 
-		$opts = strpos(end($this->url),"?");
-		if($opts>0){
-			$gets = explode("&",substr($this->url[count($this->url)-1],$opts+1));
-			$this->url[count($this->url)-1] = substr($this->url[count($this->url)-1],0,$opts);
+		if($URL=='/') $this->url[0] = 'home';
+		else $this->url = explode("/",substr($URL,1));
 
-			foreach($gets as $item){
-				list($var,$data) = explode("=",$item);
-				$this->gets[$var] = $data;
+		if(SK_REWRITE == 1){
+			$opts = strpos(end($this->url),"?");
+			if($opts>0){
+				$gets = explode("&",substr($this->url[count($this->url)-1],$opts+1));
+				$this->url[count($this->url)-1] = substr($this->url[count($this->url)-1],0,$opts);
+
+				foreach($gets as $item){
+					list($var,$data) = explode("=",$item);
+					$this->gets[$var] = $data;
+				}
 			}
+		}else{
+			$this->gets = $_GET;
 		}
+
 
 		$q = mysql_query("SELECT * FROM `config` ORDER by `id`");
 		while($r = mysql_fetch_assoc($q))
@@ -68,6 +93,12 @@ class UCore{
 
 		if(isset($_SESSION['sk_user']))
 			$this->logged = true;
+
+		$this->api = &$api;
+		$this->api->_set_config_param('config',$this->config);
+		$this->api->_set_config_param('gets',$this->gets);
+		$this->api->_set_config_param('url',$this->url);
+		$this->api->_set_config_param('logged',$this->logged);
 	}
 
 	/**
@@ -76,6 +107,7 @@ class UCore{
 	 * @return string
 	 */
 	public function getPage(){
+		$api = $this->api;
 		if(!$this->logged)
 			switch($this->url[0]){
 				case 'home':	 return 'firstpage';break;
@@ -87,6 +119,7 @@ class UCore{
 				case 'fgallery': return 'full_gallery';break;
 				case 'files':	 return 'files';break;
 				case '404':		 return '404';break;
+				case 'js-main':	 return 'js/main';break;
 				default:
 					masterRedirect("/404");
 			}
@@ -104,6 +137,8 @@ class UCore{
 				case 'change':	 return 'change';break;
 				case 'extend':	 return 'extend';break;
 				case '404':		 return '404';break;
+				case 'js-main':	 return 'js/main';break;
+				case 'js-admin': return 'js/admin';break;
 
 				case 'admingallery':
 					if($this->fieldByID('user','rank',$_SESSION['sk_user'])!='admin')
@@ -146,6 +181,8 @@ class UCore{
 					return 'admin/gsettings';
 					break;
 				default:
+					if($api->_isset_page($this->url[0]))
+						return $api->_get_page($this->url[0]);
 					masterRedirect("/404");
 			}
 	}
@@ -179,7 +216,47 @@ class UCore{
 				case 'users':		return 'admin';break;
 				case '404':			return 'page';break;
 				default:
+					if($api->_isset_page($this->url[0]))
+						return $api->_get_type($this->url[0]);
+					else
+						masterDie($this->url[0]);
+					//masterRedirect("/404");
+			}
+	}
+
+	/**
+	 * Returns the page title.
+	 *
+	 * @return string
+	 */
+	public function pageTitle(){
+		$language = $this->lang;
+		if(!$this->logged)
+			switch($this->url[0]){
+				case 'home':	 return $language['firstPage_title'];break;
+				case 'gallery':	 return $this->FieldByField("draws","filename",filter_var(end($this->url),FILTER_SANITIZE_STRING),"title").' &raquo; '.$language['galleryPage_title'];break;
+				case 'fgallery': return $language['fullGallery_title'];break;
+				case 'demo':	 return $language['demoPage_title'];break;
+				default:
 					masterRedirect("/404");
+			}
+		else
+			switch($this->url[0]){
+				case 'home':	 	return $language['firstPage_title'];break;
+				case 'gallery':	 	return $this->FieldByField("draws","filename",filter_var(end($this->url),FILTER_SANITIZE_STRING),"title").' &raquo; '.$language['galleryPage_title'];break;
+				case 'fgallery': 	return $language['fullGallery_title'];break;
+				case 'extend':		return $language['extendPage_title'];break;
+				case 'account':		return $this->fieldByID("user","user",$_SESSION['sk_user']).' &raquo; '.$language['accountPage_title'];break;
+				case 'mygallery':	return $language['myGallery_title'];break;
+				case 'admingallery':return $language['adminGallery_title'];break;
+				case 'settings':	return $language['adminSettings_title'];break;
+				case 'users':		return $language['adminGallery_title'];break;
+				default:
+					if($api->_isset_page($this->url[0]))
+						return $api->_get_type($this->url[0]);
+					else
+						masterDie($this->url[0]);
+					//masterRedirect("/404");
 			}
 	}
 
@@ -271,6 +348,24 @@ class UCore{
 	 */
 	public function IDByField($table,$field,$value){
 		$sql = "SELECT `id` FROM `{$table}` WHERE `{$field}`='{$value}'";
+		$q = mysql_query($sql);
+		if(!mysql_num_rows($q))
+			return FALSE;
+		$r = mysql_fetch_row($q);
+		return $r[0];
+	}
+
+	/**
+	 * Searches in the database for a field by a field value.
+	 *
+	 * @param string $table
+	 * @param string $field
+	 * @param string $value
+	 * @param string $result_field
+	 * @return string
+	 */
+	public function FieldByField($table,$field,$value,$result_field){
+		$sql = "SELECT `{$result_field}` FROM `{$table}` WHERE `{$field}`='{$value}'";
 		$q = mysql_query($sql);
 		if(!mysql_num_rows($q))
 			return FALSE;
@@ -392,6 +487,22 @@ class UCore{
 		$r = hexdec($r); $g = hexdec($g); $b = hexdec($b);
 
 		return array($r, $g, $b);
+	}
+
+	/**
+	 * Creates the url of a page based on the SK_REWRITE constant.
+	 *
+	 * @param string $url
+	 * @param bool $display
+	 * @return string
+	 */
+	public function createURL($url,$display=false){
+		if(!$display)
+			if(SK_REWRITE==1) return $url;
+			else return "/index.php".$url;
+		else
+			if(SK_REWRITE==1) echo $url;
+			else echo "/index.php".$url;
 	}
 }
 /*File: core.php*/

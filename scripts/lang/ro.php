@@ -23,7 +23,7 @@ $language = array(
 	//Titles of Pages
 	"firstPage_title"	=> "Bine ai venit",
 	"demoPage_title"	=> "Incearca",
-	"galleryPage_title"	=> "Gallery",
+	"galleryPage_title"	=> "Galerie",
 	"accountPage_title"	=> "Contul meu",
 	"fullGallery_title"	=> "Vezi toate desenele",
 	"myGallery_title"	=> "Galeria mea",
@@ -134,6 +134,7 @@ $language = array(
 	//Admin Settings
 	"aSettingsHeader"	=> "Setari Generale",
 	"asTimezone"		=> "Fus Orar",
+	"aSiteName"			=> "Titlul site-ului",
 
 	//Admin User
 	"auUsername"		=> "Utilizator",
@@ -149,7 +150,7 @@ $language = array(
 	"somethingnew_text"	=> "Incearca ceva nou, diferit si foarte simplu de utilizat. Deseneaza tot ce vrei si arata-ti arta prietenilor tai folosindu-te de butoanele sociale. De asemenea, poti descarca sau dezvolta desene deja existente.",
 
 	//Store it Box
-	"shareit_title"		=> "Distribuie desnele",
+	"shareit_title"		=> "Distribuie desenele",
 	"shareit_text"		=> "Deseneaza tot ce ti-ai dorit si distibuie desenul pe Facebook, Twitter, MySpace, Email, Messenger sau alte retele sociale.",
 
 	//Equation Box

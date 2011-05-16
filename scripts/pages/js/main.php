@@ -1,3 +1,6 @@
+<?php
+header ('Content-Type: text/javascript');
+?>
 $(document).ready(function(){
 	$('.menu ul li a').hover(function(){
 		$(this).animate({paddingTop: "7px",color: "#ffffff"},300);//.animate({}, 500);
@@ -73,7 +76,7 @@ $(document).ready(function(){
 			password: $("#l-password").val(),
 				ajax: true
 		};
-		$.post("/login",data,function(data){
+		$.post("<?=$core->createURL("/login")?>",data,function(data){
 			if(data!="good"){
 				$("#loginError").fadeOut(100).text();
 				$("#loginError").html(data).fadeIn(300);
@@ -98,7 +101,7 @@ $(document).ready(function(){
 			lastname: $("#r-lastname").val(),
 				ajax: true
 		};
-		$.post("/register",data,function(data){
+		$.post("<?=$core->createURL("/register")?>",data,function(data){
 			var msgStart = data.split("|",2);
 			if(msgStart[0]!="good"){
 				$("#registerError").fadeOut(100).text();
@@ -123,7 +126,7 @@ $(document).ready(function(){
 				type: 'infoChange',
 				ajax: true
 		};
-		$.post("/change",data,function(data){
+		$.post("<?=$core->createURL("/change")?>",data,function(data){
 			var msgStart = data.split("|",2);
 			if(msgStart[0]=="good"){
 				$("#accErr").fadeOut(100).text();
@@ -139,7 +142,7 @@ $(document).ready(function(){
 				$("#accErr").fadeIn(300);
 
 				var t=setTimeout(function (){
-					window.location.href="/account";
+					window.location.href="<?=$core->createURL("/account")?>";
 				},500);
 			}else{
 				$("#accErr").fadeOut(100).text();
@@ -162,7 +165,7 @@ $(document).ready(function(){
 				type: 'deleteAccount',
 				ajax: true
 		};
-		$.post("/change",data,function(data){
+		$.post("<?=$core->createURL("/change")?>",data,function(data){
 			var msgStart = data.split("|",2);
 			if(msgStart[0]=="good"){
 				var t=setTimeout(function (){
@@ -191,7 +194,7 @@ $(document).ready(function(){
 				type: 'passChange',
 				ajax: true
 		};
-		$.post("/change",data,function(data){
+		$.post("<?=$core->createURL("/change")?>",data,function(data){
 			var msgStart = data.split("|",2);
 			if(msgStart[0]=="good"){
 				$("#passErr").fadeOut(100).text();
@@ -216,11 +219,11 @@ $(document).ready(function(){
 
 	$("#extend").click(function(){
 		var filename = $("#extendFN").val();
-		window.location.href = '/extend/'+filename;
+		window.location.href = '<?=$core->createURL("/extend/")?>'+filename;
 	});
 	$("#cancel").click(function(){
 		var filename = $("#extendFN").val();
-		window.location.href = '/gallery/'+filename;
+		window.location.href = '<?=$core->createURL("/gallery/")?>'+filename;
 	});
 });
 
@@ -239,9 +242,9 @@ function confirmDelete(title,message,file){
 		buttons: {
 			"Delete": function() {
 				var toSend = {filename: file};
-				$.post("/delete",toSend);
+				$.post("/<?=$core->createURL("/delete")?>",toSend);
 				$(this).dialog("close");
-				window.location.href='/mygallery';
+				window.location.href='<?=$core->createURL("/mygallery")?>';
 			},
 			Cancel: function() {
 				$(this).dialog("close");

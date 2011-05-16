@@ -1,5 +1,11 @@
 Spark Sketch - Your online Drawing Pad
 
+#################|Version 0.1.6|##################
+- Fixed a registration bug
+- Added the posibilty to change between pretty URL's
+and ugly URL's (mod_rewrite or path_info)
+- Added the posibilty to change the website title
+
 #################|Version 0.1.5|##################
 - Reverted to the original jQuery UI theme
 - Added global website configuration (see config section)

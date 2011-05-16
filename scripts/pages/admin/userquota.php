@@ -3,7 +3,7 @@ if(!isset($_SESSION['sk_user'])){
 	masterRedirect("/");
 }
 if($core->fieldByID('user','rank',$_SESSION['sk_user'])!='admin')
-	masterRedirect("/404");
+	masterRedirect($core->createURL("/404"));
 
 $clean = array();
 $clean['user'] = filter_input(INPUT_POST,"user",FILTER_SANITIZE_STRING);

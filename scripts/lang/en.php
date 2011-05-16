@@ -134,6 +134,7 @@ $language = array(
 	//Admin Settings
 	"aSettingsHeader"	=> "General Settings",
 	"asTimezone"		=> "Timezone",
+	"aSiteName"			=> "Website Title",
 
 	//Admin User
 	"auUsername"		=> "Username",

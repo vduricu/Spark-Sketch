@@ -3,7 +3,7 @@
 //We start the session before anything else.
 session_start();
 
-define("SPK_BASEDIR","D:/wamp/www/proiecte/atestat");
+define("SPK_BASEDIR","D:/wamp/www/drawingpad");
 define("SPK_SCRIPTS",SPK_BASEDIR."/scripts");
 define("SPK_PAGES",SPK_BASEDIR."/scripts/pages");
 ini_set('include_path', SPK_BASEDIR.PATH_SEPARATOR.SPK_SCRIPTS.PATH_SEPARATOR.SPK_PAGES.PATH_SEPARATOR.ini_get('include_path'));
@@ -12,6 +12,9 @@ ini_set('include_path', SPK_BASEDIR.PATH_SEPARATOR.SPK_SCRIPTS.PATH_SEPARATOR.SP
 error_reporting(E_ALL | E_STRICT);
 //error_reporting(0);
 
+//We define if the website can have pretty urls or not.
+define("SK_REWRITE",0);
+
 //We define the website address.
 define("SPARK_SITE","sketch.spark-projekt.net");
 
@@ -19,7 +22,7 @@ define("SPARK_SITE","sketch.spark-projekt.net");
 define("SK_CODENAME","Tristan Tzara");
 define("SK_VMAJOR",0);
 define("SK_VMINOR",1);
-define("SK_VBUILD",5);
+define("SK_VBUILD",6);
 define("SK_VERSION",SK_VMAJOR.'.'.SK_VMINOR.'.'.SK_VBUILD.'-'.strtolower(str_replace(" ","_",SK_CODENAME)));
 
 /**
@@ -70,11 +73,18 @@ ob_start();
 
 require_once("config.php");
 require_once("core.php");
+require_once("api.php");
 
 @mysql_connect(DB_HOSTNAME,DB_USERNAME,DB_PASSWORD) or trigger_error("I cannot make a connection with the database server!");
 mysql_select_db(DB_DATABASE) or trigger_error("I cannot use the requested database!");
 
-$core = new UCore();
+$language = array();
+
+$api = new UKApi();
+$core = new UCore($api,$language);
+
+//require_once("xtend/test/apitest.php");
+//require_once("xtend/xtended2/fucushima.php");
 
 //We set the default timezone for our script
 date_default_timezone_set($core->getConfig('timezone'));
@@ -89,7 +99,6 @@ else
 //And here we get which page we need to display
 $page = $core->getPage();
 require_once("pages/{$page}.php");
-
 ob_end_flush();
 /*File: index.php*/
 /*Date: 25.04.2011*/
