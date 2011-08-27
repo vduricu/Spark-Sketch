@@ -1,5 +1,87 @@
 Spark Sketch - Your online Drawing Pad
 
+====================|TO DO|====================
++ F.A.Q.
++ Arc Tool, Gradient, Rounded Corners, Bigger
+Size Canvas, Oval Tool, Scale Tool, Rotate Tool
++ AJAX Pagination/Draw Pagination
++ Spark Sketch File System
++ Colaborative Painting
++ Multiplayer Games
++ Install system
++ QR Code
++ Extend the Mobile platform
+===============================================
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	Version 0.3.x - Ilarie Voronca
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+#################|Version 0.3.2|##################
+- Added a mobile version of our website
+
+#################|Version 0.3.1|##################
+- Fixed undo function in extended draw app
+- Added thumbnails to my gallery
+- Extended user invitation page
+- Fixed a delete bug. Now after a draw is delete it's discussion will be deleted.
+
+#################|Version 0.3.0|##################
+- New extended Drawing Pad (available only to registered users)
+- New Tools: Brush, Line, Circle, Rectangle, Text
+- New background tools: Fill Background, Axis Background
+- Paint Preview, Redo Function
+- Some tools have Fill & Stroke Options (Circle & Rectangle)
+- Optimized image loading - On the fly thumbnail creation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	Version 0.2.x - Sasa Pana
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+#################|Version 0.2.6z|#################
+- Fixed ajax double save bug
+
+#################|Version 0.2.6|##################
+- Each draw can be discussed
+- Akismet implementation
+- Fixed ajax registration and login
+
+#################|Version 0.2.5|##################
+- Username limited to 30 characters
+- Images can be reported
+- Updated administration system
+- "Demo" draws are moderated first than published
+
+#################|Version 0.2.4|##################
+- Updated language selection - 2 default languages
+- Added a notice after registration
+- Added background fill button
+- "Demo" draw download
+
+#################|Version 0.2.3|##################
+- Drawing Pad bug fixes
+- Added Password recovery function
+- Added Facebook image thumbnail to gallery elements
+
+#################|Version 0.2.2b|#################
+- Fixed a few bugs with the drawing system
+- Updated account activation function
+
+#################|Version 0.2.2|##################
+- Added Undo function
+- Fixed save bug
+- Added User invitation system
+
+#################|Version 0.2.1|##################
+- New Design
+- New Drawing Pad js
+- New Engine
+- Droped Quota function
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	Version 0.1.x - Tristan Tzara
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 #################|Version 0.1.6|##################
 - Fixed a registration bug
 - Added the posibilty to change between pretty URL's

@@ -1,1 +1,0 @@
-<script src="<?=$core->createURL("/js-admin")?>" type="text/javascript"></script>
