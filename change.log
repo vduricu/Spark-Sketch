@@ -9,7 +9,6 @@ Size Canvas, Oval Tool, Scale Tool, Rotate Tool
 + Colaborative Painting
 + Multiplayer Games
 + Install system
-+ QR Code
 + Extend the Mobile platform
 ===============================================
 
@@ -20,6 +19,7 @@ Size Canvas, Oval Tool, Scale Tool, Rotate Tool
 #################|Version 0.3.3|##################
 - Now you can modify the canvas size.
 - Added FAQ section
+- QR Code for mobile phones link
 
 #################|Version 0.3.2|##################
 - Added a mobile version of our website
