@@ -7,6 +7,7 @@
 		<li><a href="<?php $spkcore->createURL('/page/gallery',true)?>"><?php ___("galleryMenu")?></a></li>
 		<li><a href="<?php $spkcore->createURL('/page/myaccount',true)?>"><?php ___("myaccountMenu")?></a></li>
 		<li><a href="<?php $spkcore->createURL('/page/invitation',true)?>"><?php ___("inviteMenu")?></a></li>
+		<li><a href="<?php $spkcore->createURL('/page/faq',true)?>"><?php ___("faqMenu")?></a></li>
 		<?php
 		if(loggedUserRank()=='admin'){?>
 		<li><a href="<?php __($spkcore->getConfig('path'))?>/sk-admin/"><?php ___("adminMenu")?></a></li>

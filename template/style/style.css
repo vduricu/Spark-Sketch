@@ -239,3 +239,26 @@ br.c { clear: both; }
 	color: #f8f8f8;
 	background: #282828;
 }
+
+.faqItems{
+	list-style:none;
+	margin-left: 5px;
+	margin-top: 10px;
+}
+.faqItems li{
+
+}
+.faqItems li .question{
+	font-size: 22pt;
+	font-family: sans-serif;
+	font-weight: bold;
+	padding: 2px;
+	margin-bottom: 2px;
+	border-bottom: 1px dashed #292929;
+}
+.faqItems li a{text-decoration: none !important;}
+.faqItems li a:hover{color: #dc0000;}
+.faqItems li .answer{
+	padding: 5px;
+	display: none;
+}

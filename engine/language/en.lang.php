@@ -183,6 +183,11 @@ $language['en'] = array(
 	<p>This is the mobile version of the Spark Sketch website. Currently you can only view the existing drawings and download them. Also you have access to a page describing how this version of the website works.</p>
 </div>',
 
+	/*FAQ Page*/
+	"noItems"					=> "No items found.",
+	"faqTitle"					=> "F.A.Q.",
+	"faqMenu"					=> "F.A.Q.",
+
 	/*Extended draw*/
 	"systemMessage"				=> "System Message",
 	"eDPTitle"					=> "Extended Draw",

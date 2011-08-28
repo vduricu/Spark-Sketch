@@ -88,3 +88,15 @@ var discuss = function(page){
 	window.open(page,"Discuss","menubar=no,width=500,height=650,toolbar=no,scrollbars=no");
 	return false;
 }
+
+var showANS = function(item){
+	var activeANSid = $(".activeANS").attr('id');
+	if(activeANSid == item)
+		$(".activeANS").slideUp(250).removeClass('activeANS');
+	else{
+		$(".activeANS").slideUp(250).removeClass('activeANS');
+		$("#"+item).slideDown(500).addClass('activeANS');
+	}
+
+	return false;
+}

@@ -130,6 +130,7 @@ class Template extends XTend{
 			case 'myaccount':	return langItem('myaccountTitle');break;
 			case '404':			return langItem('404pageTitle');break;
 			case 'recovery':	return langItem('recoveryTitle');break;
+			case 'faq':			return langItem('faqTitle');break;
 		}
 	}
 	public function pageType(){
@@ -148,6 +149,7 @@ class Template extends XTend{
 				case 'login':	return 'login';break;
 				case 'register':return 'register';break;
 				case 'recovery':return 'recovery';break;
+				case 'faq':		return 'faq';break;
 				default:
 					return '';
 			}
@@ -161,6 +163,7 @@ class Template extends XTend{
 				case 'myaccount':	return 'myaccount';break;
 				case 'edit':		return 'edit';break;
 				case 'extend':		return 'extend';break;
+				case 'faq':			return 'faq';break;
 				default:
 					return '';
 			}

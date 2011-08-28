@@ -8,7 +8,7 @@ define("SDB_DATABASE","sketch");
 
 //We define the website address.
 define("SK_REWRITE",0);
-define("SK_DEFAULTLANGUAGE",'ro');
+define("SK_DEFAULTLANGUAGE",'en');
 
 /*File: config.php*/
 /*Date: 21.05.2011*/

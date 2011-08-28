@@ -183,6 +183,11 @@ $language['ro'] = array(
 		<p>Aceasta este varianta mobila a site-ului Spark Sketch. Momentan puteti doar vizualiza desenele utilizatorilor si/sau le puteti descarca. De asemenea puteti accesa pagina cu informatii despre cum functioneaza aceasta versiune a site-ului.</p>
 	</div>',
 
+	/*FAQ Page*/
+	"noItems"					=> "Nu am gasit elemente.",
+	"faqTitle"					=> "Intrebari si Raspunsuri",
+	"faqMenu"					=> "Intrebari",
+
 	/*Extended draw*/
 	"systemMessage"				=> "Mesaj de sistem",
 	"eDPTitle"					=> "Desenare Extinsa",

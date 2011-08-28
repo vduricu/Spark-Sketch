@@ -1,7 +1,7 @@
 Spark Sketch - Your online Drawing Pad
 
 ====================|TO DO|====================
-+ F.A.Q.
++ F.A.Q. - administration
 + Arc Tool, Gradient, Rounded Corners, Bigger
 Size Canvas, Oval Tool, Scale Tool, Rotate Tool
 + AJAX Pagination/Draw Pagination
@@ -11,7 +11,6 @@ Size Canvas, Oval Tool, Scale Tool, Rotate Tool
 + Install system
 + QR Code
 + Extend the Mobile platform
-+ Draw size
 ===============================================
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -20,6 +19,7 @@ Size Canvas, Oval Tool, Scale Tool, Rotate Tool
 
 #################|Version 0.3.3|##################
 - Now you can modify the canvas size.
+- Added FAQ section
 
 #################|Version 0.3.2|##################
 - Added a mobile version of our website

@@ -27,6 +27,14 @@ class SPK_Lang{
 	private $languages;
 
 	/**
+	 * Used to store the loaded language code.
+	 *
+	 * @var string $loadedLang
+	 * @access public
+	 */
+	public $loadedLang;
+
+	/**
 	 * Constructs the SPK_Lang Class, requires a language code to pe passed as a parameter.
 	 *
 	 * @param string $lang
@@ -46,6 +54,7 @@ class SPK_Lang{
 			$this->language = &$this->languages[$lang];
 		else
 			trigger_error("Language not exists");
+		$this->loadedLang = $lang;
 	}
 
 	/**
@@ -65,8 +74,10 @@ class SPK_Lang{
 	 * @return void
 	 */
 	public function loadUserLang($lang){
-		if(isset($this->languages[$lang]))
+		if(isset($this->languages[$lang])){
 			$this->language = &$this->languages[$lang];
+			$this->loadedLang = $lang;
+		}
 	}
 
 	/**
