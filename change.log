@@ -11,11 +11,15 @@ Size Canvas, Oval Tool, Scale Tool, Rotate Tool
 + Install system
 + QR Code
 + Extend the Mobile platform
++ Draw size
 ===============================================
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	Version 0.3.x - Ilarie Voronca
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+#################|Version 0.3.3|##################
+- Now you can modify the canvas size.
 
 #################|Version 0.3.2|##################
 - Added a mobile version of our website

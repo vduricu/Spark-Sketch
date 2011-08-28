@@ -8,8 +8,7 @@
       </set:Property>
     </set:Property>
   </set:Settings>
-  <Dependencies>
-    <Dependency kind="Path" id="" />
-  </Dependencies>
-  <RootDirectory path="" childrenHandling="Auto" />
+  <RootDirectory path="" childrenHandling="Auto">
+    <Ignore name=".git" />
+  </RootDirectory>
 </Project>

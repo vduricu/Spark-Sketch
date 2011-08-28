@@ -9,6 +9,10 @@ if(!isset($_SESSION['sk_user'])){
 $edit = false;
 $title = '';
 $bkgColor = "#ffffff";
+$deafult_width = getConfig('default_width');
+$deafult_height = getConfig('default_height');
+
+$heights = $widths = array('120','240','320','480','580','640','720','800','850','960','1080','1200','1280','1360','1440','1520','1600','1780','1860','1920','2000','2130','2250','2370','2490');
 
 if(isset($_GET['type']))
 	if($_GET['type']=='edit'){
@@ -18,6 +22,8 @@ if(isset($_GET['type']))
 		$edit = true;
 		$title = getElementByField("draws","filename",$filename,'title');
 		$bkgColor = getElementByField("draws","filename",$filename,'bkgcolor');
+		$deafult_width = getElementByField("draws","filename",$filename,'width');
+		$deafult_height = getElementByField("draws","filename",$filename,'height');
 		if($bkgColor=='axis'||$bkgColor=='none')
 			$bkgColor = "#ffffff";
 	}
@@ -84,15 +90,15 @@ if(isset($_GET['type']))
 		</script>
 		<style type="text/css">
 .canvas{
-	width: 850px;
-	height: 580px;
+	width: <?php __($deafult_width)?>px;
+	height: <?php __($deafult_height)?>px;
 }
 		</style>
 	</head>
 	<body>
 		<div class="content">
 			<div class="canvas">
-				<canvas id="drawingPad" width="850" height="580"></canvas>
+				<canvas id="drawingPad" width="<?php __($deafult_width)?>" height="<?php __($deafult_height)?>"></canvas>
 			</div>
 		</div>
 		<div class="toolstrip">
@@ -108,6 +114,7 @@ if(isset($_GET['type']))
 				<ul>
 					<li><a href="#" onclick="return undo();" title="<?php ___("undo")?>" class="no-text undo">&nbsp;</a></li>
 					<li><a href="#" onclick="return redo();" title="<?php ___("redo")?>" class="no-text redo">&nbsp;</a></li>
+					<li><a href="#" onclick="return settings();" title="<?php ___("settings")?>" class="no-text settings">&nbsp;</a></li>
 					<li><a href="#" onclick="return clearCanvas();" title="<?php ___("clearCanvas")?>" class="no-text clearb">&nbsp;</a></li>
 				</ul>
 				<div class="clear"></div>
@@ -148,6 +155,40 @@ if(isset($_GET['type']))
 			<div id="properties"></div>
 		</div>
 		<div class="modals">
+			<div id="settingsDialog" title="<?php ___("settings")?>">
+				<table>
+					<tr>
+						<th style="text-align: center;font-size: 14pt;color: #dc0000;" colspan="2"><?php ___("canvasSize")?></th>
+					</tr>
+					<tr>
+						<th><?php ___("cwidth")?></th>
+						<td><select name="width" id="cwidth">
+							<?php foreach($widths as $width)
+								if($width == $deafult_width){?>
+<option value="<?php __($width)?>" selected><?php __($width)?></option>
+								<?php }else{?>
+<option value="<?php __($width)?>"><?php __($width)?></option>
+								<?php }?>
+						</select></td>
+					</tr>
+					<tr>
+						<th><?php ___("cheight")?></th>
+						<td><select name="height" id="cheight">
+							<?php foreach($heights as $height)
+							if($height == $deafult_height){?>
+<option value="<?php __($height)?>" selected><?php __($height)?></option>
+								<?php }else{?>
+<option value="<?php __($height)?>"><?php __($height)?></option>
+								<?php }?>
+						</select></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;font-size: 14pt;color: #dc0000;" colspan="2">
+							<input type="button" class="sbutton" value="<?php ___("modify")?>" onClick="modifyCanvas();" />
+						</td>
+					</tr>
+				</table>
+			</div>
 			<div id="about" title="<?php ___("about")?>">
 				<table>
 					<tr>

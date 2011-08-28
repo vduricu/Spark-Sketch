@@ -401,7 +401,7 @@ var previewDraw = function(){
 	return false;
 }
 
-$("#about,#saveDialog,#msgDialog").dialog({
+$("#about,#saveDialog,#msgDialog,#settingsDialog").dialog({
 	autoOpen: false,
 	modal: true,
 	resizable: false
@@ -415,6 +415,26 @@ var aboutApp = function(){
 var saveDraw = function(){
 	$("#saveDialog").dialog("open");
 	return false;
+}
+
+var settings = function(){
+	$("#settingsDialog").dialog("open");
+	return false;
+}
+var modifyCanvas = function(){
+	var nwidth = $("#cwidth").val();
+	var nheight = $("#cheight").val();
+
+	var width = canvas.width;
+	var height = canvas.height;
+
+	//.canvas
+
+	$(".canvas").css({width: nwidth,height: nheight});
+	canvas.width = nwidth;
+	canvas.height = nheight;
+
+	$("#settingsDialog").dialog("close");
 }
 
 var saveCanvas = function (){

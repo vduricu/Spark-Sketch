@@ -191,6 +191,7 @@ $language['ro'] = array(
 	"about"						=> "Despre produs",
 	"close"						=> "Acasa",
 	"redo"						=> "Redo",
+	"settings"					=> "Setari",
 	"colorTitle"				=> "Culori",
 	"toolsTitle"				=> "Unelte",
 	"brushTool"					=> "Pensula",
@@ -210,6 +211,10 @@ $language['ro'] = array(
 	"left"						=> "Stanga",
 	"center"					=> "Centru",
 	"right"						=> "Dreapta",
+	"canvasSize"				=> "Marime Imagine",
+	"cwidth"					=> "Latime",
+	"cheight"					=> "Inaltime",
+	"modify"					=> "Modifica",
 );
 
 /*File: ro.lang.php*/

@@ -13,7 +13,7 @@ class SPK_Core{
 
 	const VMajor	= 0;
 	const VMinor	= 3;
-	const VRev		= 2;
+	const VRev		= 3;
 	//const VRev		= "5b";
 	const CodeName	= "Ilarie Voronca";
 	const PassNonce	= "d4Zu1R7U9";
@@ -614,8 +614,15 @@ class SPK_Core{
 		$thumbWidth = 200;
 
 		// calculate thumbnail size
-		$new_width = $thumbWidth;
-		$new_height = floor($height * ($thumbWidth / $width ));
+		if($width > $height){
+			$new_width = $thumbWidth;
+			$new_height = floor($height * ($thumbWidth / $width ));
+		}else{
+			$thumbWidth = 136;
+			$new_width = floor($width * ($thumbWidth / $height ));
+			$new_height = $thumbWidth;
+		}
+
 
 		// create a new temporary image
 		$tmp_img = imagecreatetruecolor($new_width, $new_height);

@@ -180,6 +180,9 @@ img{vertical-align: middle;border: none;}
 	border: 1px solid #787878;
 }
 
+#settingsDialog th{width: 45%;padding: 2px;}
+#settingsDialog td{width: 50%;padding: 2px;}
+
 .sbutton{
 	color: #ffffff;
 	font-family: Arial, Tahoma, sans-serif;

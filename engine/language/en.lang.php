@@ -191,6 +191,7 @@ $language['en'] = array(
 	"about"						=> "About Software",
 	"close"						=> "Home",
 	"redo"						=> "Redo",
+	"settings"					=> "Settings",
 	"colorTitle"				=> "Color",
 	"toolsTitle"				=> "Tools",
 	"brushTool"					=> "Brush",
@@ -210,6 +211,10 @@ $language['en'] = array(
 	"left"						=> "Left",
 	"center"					=> "Center",
 	"right"						=> "Right",
+	"canvasSize"				=> "Canvas Size",
+	"cwidth"					=> "Width",
+	"cheight"					=> "Height",
+	"modify"					=> "Modifica",
 );
 
 /*File: en.lang.php*/
